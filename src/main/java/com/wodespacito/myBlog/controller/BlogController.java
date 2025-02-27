@@ -3,6 +3,7 @@ package com.wodespacito.myBlog.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wodespacito.myBlog.pojo.Blog;
+import com.wodespacito.myBlog.pojo.BlogListItem;
 import com.wodespacito.myBlog.pojo.PageBean;
 import com.wodespacito.myBlog.pojo.Response;
 import com.wodespacito.myBlog.service.BlogService;
@@ -22,7 +23,7 @@ public class BlogController {
     private BlogService blogService;
     // 获取博客列表
     @GetMapping("/getList")
-    public Response<PageBean<Blog>> getBlogList(
+    public Response<PageBean<BlogListItem>> getBlogList(
         Integer pageNum,
         Integer pageSize,
         @RequestParam(required = false) Integer status

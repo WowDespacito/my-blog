@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.wodespacito.myBlog.mapper.BlogMapper;
 import com.wodespacito.myBlog.pojo.Blog;
+import com.wodespacito.myBlog.pojo.BlogListItem;
 import com.wodespacito.myBlog.pojo.PageBean;
 import com.wodespacito.myBlog.service.BlogService;
 
@@ -19,20 +20,20 @@ public class BlogServiceImpl implements BlogService {
 
     // 获取博客列表
     @Override
-    public PageBean<Blog> getBlogList(
+    public PageBean<BlogListItem> getBlogList(
         Integer pageNum,
         Integer pageSize,
         Integer status
     ) {
         // 创建pageBean对象
-        PageBean<Blog> bp = new PageBean<>();
+        PageBean<BlogListItem> bp = new PageBean<>();
 
         // 开启分页查询
         PageHelper.startPage(pageNum, pageSize);
 
         // 调用Mapper查询数据
-        List<Blog> list = blogMapper.getBlogList(status);
-        try (Page<Blog> page = (Page<Blog>) list){
+        List<BlogListItem> list = blogMapper.getBlogList(status);
+        try (Page<BlogListItem> page = (Page<BlogListItem>) list){
             bp.setTotal(page.getTotal());
             bp.setItems(page.getResult());
         } catch(Exception e) {
