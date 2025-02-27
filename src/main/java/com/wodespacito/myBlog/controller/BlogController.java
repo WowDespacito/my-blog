@@ -32,7 +32,7 @@ public class BlogController {
     
     // 获取博客详情
     @GetMapping("/getDetail")
-    public Response<Blog> getBlogDetail(Integer id) {
+    public Response<Blog> getBlogDetail(@RequestParam(required = true) Integer id) {
         return Response.success(blogService.getBlogDetail(id));
     }
 }
