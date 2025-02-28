@@ -31,10 +31,6 @@ public class BlogServiceImpl implements BlogService {
 
         // 调用Mapper查询数据
         try (Page<BlogListItem> page =(Page<BlogListItem>) blogMapper.getBlogList(status)){
-            System.out.println(page);
-            System.out.println(page.getResult());
-            System.out.println(page.getTotal());
-
             bp.setTotal(page.getTotal());
             bp.setItems(page.getResult());
         } catch(Exception e) {

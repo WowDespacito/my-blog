@@ -8,7 +8,6 @@ import com.wodespacito.myBlog.pojo.PageBean;
 import com.wodespacito.myBlog.pojo.Response;
 import com.wodespacito.myBlog.service.BlogService;
 
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
-@RequestMapping("/blog")
 public class BlogController {
     @Autowired
     private BlogService blogService;

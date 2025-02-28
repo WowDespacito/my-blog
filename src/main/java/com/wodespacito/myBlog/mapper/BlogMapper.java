@@ -1,6 +1,5 @@
 package com.wodespacito.myBlog.mapper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
@@ -8,7 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.github.pagehelper.Page;
 import com.wodespacito.myBlog.pojo.Blog;
 import com.wodespacito.myBlog.pojo.BlogListItem;
 
