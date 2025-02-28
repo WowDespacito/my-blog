@@ -55,4 +55,9 @@ public class BlogServiceImpl implements BlogService {
     public void updateBlog(Blog blog) {
         blogMapper.updateBlog(blog);
     }
+
+    // 删除博客
+    public void deleteBlog(Integer id) {
+        blogMapper.deleteBlog(id);
+    }
 }

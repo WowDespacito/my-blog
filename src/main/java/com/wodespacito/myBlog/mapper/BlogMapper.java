@@ -24,27 +24,27 @@ public interface BlogMapper {
      * @param id 博客 ID
      * @return 博客详情
      */
-    @Select("SELECT * FROM blog WHERE id = #{id}")
+    @Select("SELECT * FROM data_blog WHERE id = #{id}")
     Blog getBlogDetail(Integer id);
 
     /**
      * 添加新博客
      * @param blog 博客对象
      */
-    @Insert("INSERT INTO blog(title, content, author, createTime, updateTime, status) VALUES(#{title}, #{content}, #{author}, #{createTime}, #{updateTime}, #{status})")
+    @Insert("INSERT INTO data_blog(title, content, author, createTime, updateTime, status) VALUES(#{title}, #{content}, #{author}, #{createTime}, #{updateTime}, #{status})")
     void addBlog(Blog blog);
 
     /**
      * 更新博客
      * @param blog 博客对象
      */
-    @Update("UPDATE blog SET title = #{title}, content = #{content}, updateTime = #{updateTime} WHERE id = #{id}")
+    @Update("UPDATE data_blog SET title = #{title}, content = #{content}, updateTime = #{updateTime} WHERE id = #{id}")
     void updateBlog(Blog blog);
 
     /**
      * 删除博客（逻辑删除，将状态设置为 -1）
      * @param id 博客 ID
      */
-    @Update("UPDATE blog SET status = -1 WHERE id = #{id}")
+    @Update("UPDATE data_blog SET status = -1 WHERE id = #{id}")
     void deleteBlog(Integer id);
 }

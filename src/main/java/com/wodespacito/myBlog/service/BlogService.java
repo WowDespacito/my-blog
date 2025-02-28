@@ -16,4 +16,7 @@ public interface BlogService {
 
     // 更新博客
     void updateBlog(Blog blog);
+
+    // 删除博客
+    void deleteBlog(Integer id);
 } 
