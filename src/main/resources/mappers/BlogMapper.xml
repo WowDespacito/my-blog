@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.wodespacito.myBlog.mapper.BlogMapper">
+<mapper namespace="com.wodespacito.my_blog.mapper.BlogMapper">
 
-  <select id="getBlogList" parameterType="java.lang.Integer" resultType="com.wodespacito.myBlog.pojo.BlogListItem">
+  <select id="getBlogList" parameterType="java.lang.Integer" resultType="com.wodespacito.my_blog.pojo.BlogListItem">
     SELECT id, title, author, create_time, update_time, status FROM data_blog
     <where>
       <if test="status != null">
