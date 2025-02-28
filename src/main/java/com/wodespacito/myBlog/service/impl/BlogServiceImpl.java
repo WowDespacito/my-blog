@@ -8,8 +8,6 @@ import com.wodespacito.myBlog.pojo.BlogListItem;
 import com.wodespacito.myBlog.pojo.PageBean;
 import com.wodespacito.myBlog.service.BlogService;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +30,16 @@ public class BlogServiceImpl implements BlogService {
         PageHelper.startPage(pageNum, pageSize);
 
         // 调用Mapper查询数据
-        List<BlogListItem> list = blogMapper.getBlogList(status);
-        try (Page<BlogListItem> page = (Page<BlogListItem>) list){
+        try (Page<BlogListItem> page =(Page<BlogListItem>) blogMapper.getBlogList(status)){
+            System.out.println(page);
+            System.out.println(page.getResult());
+            System.out.println(page.getTotal());
+
             bp.setTotal(page.getTotal());
             bp.setItems(page.getResult());
         } catch(Exception e) {
             e.printStackTrace();
+            throw e;
         }
 
         return bp;

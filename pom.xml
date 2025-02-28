@@ -55,8 +55,8 @@
 		<!-- 分页 -->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper</artifactId>
-			<version>6.1.0</version>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.4.7</version>
 		</dependency>
 		<!-- 校验 -->
 		<dependency>
