@@ -42,4 +42,10 @@ public class IdentityInterceptor implements HandlerInterceptor{
             return false;
         }
     }
+
+    @Override
+    public void afterCompletion(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler, Exception ex) throws Exception {
+        // 清除ThreadLocal中的用户信息
+        ThreadLoaclUtil.remove();
+    }
 }
