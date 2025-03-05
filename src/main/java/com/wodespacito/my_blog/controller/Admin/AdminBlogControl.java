@@ -19,6 +19,7 @@ public class AdminBlogControl {
 
     @PostMapping("/addBlog")
     public void add(@RequestBody Blog blog) {
+        System.err.println(blog);
         blogService.addBlog(blog);
     }
 
