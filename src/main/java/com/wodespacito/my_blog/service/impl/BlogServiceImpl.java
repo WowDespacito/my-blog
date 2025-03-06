@@ -8,6 +8,8 @@ import com.wodespacito.my_blog.pojo.BlogListItem;
 import com.wodespacito.my_blog.pojo.PageBean;
 import com.wodespacito.my_blog.service.BlogService;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +50,9 @@ public class BlogServiceImpl implements BlogService {
     
     // 新增博客
     public void addBlog(Blog blog) {
+        blog.setCreateTime(LocalDateTime.now());
+        blog.setUpdateTime(LocalDateTime.now());
+        blog.setStatus(0);
         blogMapper.addBlog(blog);
     }
 

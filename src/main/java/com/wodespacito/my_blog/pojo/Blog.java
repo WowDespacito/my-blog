@@ -1,21 +1,30 @@
 package com.wodespacito.my_blog.pojo;
 
-import lombok.Builder;
 import lombok.Data;
-import javax.validation.constraints.NotNull;
+
+import java.time.LocalDateTime;
+
+import com.wodespacito.my_blog.anno.Status;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.groups.Default;
 
 @Data
-@Builder
 public class Blog {
-    @NotNull
+    @NotNull(groups = Update.class)
     private Integer id;
     @NotNull
     private String title;
     // content 字段用于存储 Markdown 内容
     private String content;
-    @Builder.Default 
     private String author = "咫";
-    private String createTime;
-    private String updateTime;
-    private Integer status;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
+
+    @Status
+    private int status;
+
+    public interface Update extends Default {
+
+    }
 }

@@ -31,7 +31,7 @@ public interface BlogMapper {
      * 添加新博客
      * @param blog 博客对象
      */
-    @Insert("INSERT INTO data_blog(title, content, author, createTime, updateTime, status) VALUES(#{title}, #{content}, #{author}, #{createTime}, #{updateTime}, #{status})")
+    @Insert("INSERT INTO data_blog(title, content, author, create_time, update_time, status) VALUES(#{title}, #{content}, #{author}, #{createTime}, #{updateTime}, #{status})")
     void addBlog(Blog blog);
 
     /**

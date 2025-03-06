@@ -3,8 +3,8 @@ package com.wodespacito.my_blog.validation;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 import com.wodespacito.my_blog.anno.Status;
 
