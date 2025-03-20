@@ -1,7 +1,6 @@
 package com.wowdespacito.my_blog.controller.Admin;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wowdespacito.my_blog.pojo.Blog;
