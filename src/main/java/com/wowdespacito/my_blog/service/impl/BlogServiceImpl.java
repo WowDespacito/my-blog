@@ -10,6 +10,8 @@ import com.wowdespacito.my_blog.service.BlogService;
 
 import java.time.LocalDateTime;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,8 @@ import org.springframework.stereotype.Service;
 public class BlogServiceImpl implements BlogService {
     @Autowired
     private BlogMapper blogMapper;
+
+    private static final Logger logger = LoggerFactory.getLogger(BlogServiceImpl.class);
 
     // 获取博客列表
     @Override
@@ -36,7 +40,7 @@ public class BlogServiceImpl implements BlogService {
             bp.setTotal(page.getTotal());
             bp.setItems(page.getResult());
         } catch(Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
             throw e;
         }
 

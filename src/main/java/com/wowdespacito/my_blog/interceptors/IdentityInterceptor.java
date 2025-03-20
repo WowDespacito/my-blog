@@ -34,6 +34,9 @@ public class IdentityInterceptor implements HandlerInterceptor{
         try {
             boolean result = tokenValidationProducer.validateToken(token);
             logger.info("验证结果："+ result);
+            if(result == false){
+                response.setStatus(401);
+            }
             return result;
         } catch (Exception e) {
             logger.error("token："+token, e);;
