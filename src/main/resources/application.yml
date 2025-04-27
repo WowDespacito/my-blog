@@ -25,6 +25,8 @@ spring:
             password: ${REDIS_PASS}
             timeout: 60000
 logging:
+    file:
+        name: ${LOG_NAME}
     level:
         root: ${ROOT_LOG_LEVEL}
         com:
